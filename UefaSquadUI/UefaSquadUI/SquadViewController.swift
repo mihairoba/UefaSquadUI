@@ -11,44 +11,80 @@ class SquadViewController: UIViewController {
 
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var squadName: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var squadBadge: UIImageView!
+    @IBOutlet weak var roundNumber: UILabel!
+    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var squadDetailsView: UIView!
     
     //MARK: Vars
     var squad : Squad?
+    var screenStyle: AppStyle = .UCL
+    var isCollapsed = false
+    var selectedTag = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // remove extra lines in tableView
         self.tableView.register(UINib(nibName: "SquadHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "SquadHeaderViewIdentifier")
         tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never
         squad = UtilsManager.instance.generateSquad()
         tableView.reloadData()
+        setupWithSquad()
     }
+    
+    func setupWithStyle() {
+        self.view.backgroundColor = UIColor(named: "\(screenStyle.rawValue)_background")!
+        self.tableView.backgroundColor = UIColor(named: "\(screenStyle.rawValue)_background")!
+    }
+    
+    func setupWithSquad() {
+        self.squadName.text = squad?.name ?? ""
+        self.squadBadge.image = UIImage(named: squad?.badge ?? "")
+        self.roundNumber.text = "Round of \(squad?.round ?? 1)"
+        self.favouriteButton.isSelected = squad?.isFavourite == true
+        self.backgroundImage.image = UIImage(named: "background_\(screenStyle.rawValue)")
+        self.tableView.backgroundColor = screenStyle == .UCL ? UIColor(rgbHex: 0x010040) : UIColor(rgbHex: 0x000000)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func favouriteButtonPressed(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        self.squad?.isFavourite = sender.isSelected
+    }
+    
+    @IBAction func foldButtonPressed(_ sender: Any) {
+        squadDetailsView.isHidden = !squadDetailsView.isHidden
+        isCollapsed = squadDetailsView.isHidden
+        tableView.reloadData()
+    }
+    
 }
 
 extension SquadViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        if isCollapsed || selectedTag != 5{
+            return 1
+        }
+        return 6
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 || section == 1 {
+        if isCollapsed || selectedTag != 5{
+            return 0
+        }
+        if section == 0 {
             return 0
         } else {
             return 50
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = .red
-        return view
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -57,19 +93,20 @@ extension SquadViewController: UITableViewDelegate, UITableViewDataSource {
         }
         var title = ""
         switch section {
-        case 2:
+        case 1:
             title = "Goalkeepers"
-        case 3:
+        case 2:
             title = "Defenders"
-        case 4:
+        case 3:
             title = "Midfielders"
-        case 5:
+        case 4:
             title = "Forwarders"
-        case 6:
+        case 5:
             title = "Coach"
         default:
             title = ""
         }
+        headerView.backgroundImage.backgroundColor = screenStyle == .UCL ? UIColor(rgbHex: 0x0A0A61) : UIColor(rgbHex: 0x1C1C1E)
         headerView.headerTitle.text = title
         return headerView
     }
@@ -79,16 +116,14 @@ extension SquadViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 1
-        case 2:
             return squad?.goalkeepers().count ?? 0
-        case 3:
+        case 2:
             return squad?.defenders().count ?? 0
-        case 4:
+        case 3:
             return squad?.midfielders().count ?? 0
-        case 5:
+        case 4:
             return squad?.forwarders().count ?? 0
-        case 6:
+        case 5:
             return squad?.coach().count ?? 0
         default:
             return 0
@@ -96,45 +131,35 @@ extension SquadViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            guard let topCell = tableView.dequeueReusableCell(withIdentifier: "TopSquadCellIdentifier", for: indexPath)
-                    as? TopSquadTableViewCell else {
-                return UITableViewCell()
-            }
-            topCell.setupWithSquad(squad: self.squad)
-            topCell.delegate = self
-            return topCell
-        case 1:
+        if indexPath.section ==  0 {
             guard let buttonsCell = tableView.dequeueReusableCell(withIdentifier: "ButtonsSquadCellIdentifier", for: indexPath)
                     as? ButtonsSquadTableViewCell else {
                 return UITableViewCell()
             }
+            buttonsCell.setupWithStyle(style: screenStyle)
             buttonsCell.delegate = self
             return buttonsCell
-        default:
-            break
         }
         let players = self.playersForSection(section: indexPath.section)
         guard let playerCell = tableView.dequeueReusableCell(withIdentifier: "PlayerSquadCellIdentifier", for: indexPath)
                 as? PlayerSquadTableViewCell else {
             return UITableViewCell()
         }
-        playerCell.setupWithPlayer(player: players[indexPath.row])
+        playerCell.setupWithPlayer(player: players[indexPath.row], style: screenStyle)
         return playerCell
     }
     
     func playersForSection(section: Int) -> [Person] {
         switch section {
-        case 2:
+        case 1:
             return squad?.goalkeepers() ?? [Person]()
-        case 3:
+        case 2:
             return squad?.defenders() ?? [Person]()
-        case 4:
+        case 3:
             return squad?.midfielders() ?? [Person]()
-        case 5:
+        case 4:
             return squad?.forwarders() ?? [Person]()
-        case 6:
+        case 5:
             return squad?.coach() ?? [Person]()
         default:
             return [Person]()
@@ -145,16 +170,7 @@ extension SquadViewController: UITableViewDelegate, UITableViewDataSource {
 extension SquadViewController: ButtonCellDelegate {
     func buttonPressed(tag: Int) {
         //Change datasource
+        selectedTag = tag
         tableView.reloadData()
-    }
-}
-
-extension SquadViewController: TopCellDelegate {
-    func backButtonPressed() {
-        //Do nothing for now
-    }
-    
-    func favouriteButtonPressed(isFavourite: Bool) {
-        self.squad?.isFavourite = isFavourite
     }
 }

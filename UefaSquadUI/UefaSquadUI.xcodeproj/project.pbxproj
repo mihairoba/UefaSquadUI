@@ -19,12 +19,12 @@
 		91879F1827FB8918006C9476 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 91879F1727FB8918006C9476 /* Fonts */; };
 		91879F1B27FB896A006C9476 /* Squad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1A27FB896A006C9476 /* Squad.swift */; };
 		91879F1D27FB9E53006C9476 /* UtilsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1C27FB9E53006C9476 /* UtilsManager.swift */; };
-		91879F2227FBA151006C9476 /* TopSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1F27FBA151006C9476 /* TopSquadTableViewCell.swift */; };
 		91879F2327FBA151006C9476 /* ButtonsSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F2027FBA151006C9476 /* ButtonsSquadTableViewCell.swift */; };
 		91879F2427FBA151006C9476 /* PlayerSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F2127FBA151006C9476 /* PlayerSquadTableViewCell.swift */; };
 		91879F2627FBA16D006C9476 /* SquadHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F2527FBA16D006C9476 /* SquadHeaderView.swift */; };
 		91879F2827FBA17C006C9476 /* SquadHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91879F2727FBA17C006C9476 /* SquadHeaderView.xib */; };
 		91879F2927FC5EAA006C9476 /* RoundedCornersImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1427FB8141006C9476 /* RoundedCornersImageView.swift */; };
+		91879F2B27FC6956006C9476 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F2A27FC6956006C9476 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,11 +62,11 @@
 		91879F1727FB8918006C9476 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		91879F1A27FB896A006C9476 /* Squad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squad.swift; sourceTree = "<group>"; };
 		91879F1C27FB9E53006C9476 /* UtilsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsManager.swift; sourceTree = "<group>"; };
-		91879F1F27FBA151006C9476 /* TopSquadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSquadTableViewCell.swift; sourceTree = "<group>"; };
 		91879F2027FBA151006C9476 /* ButtonsSquadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsSquadTableViewCell.swift; sourceTree = "<group>"; };
 		91879F2127FBA151006C9476 /* PlayerSquadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSquadTableViewCell.swift; sourceTree = "<group>"; };
 		91879F2527FBA16D006C9476 /* SquadHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadHeaderView.swift; sourceTree = "<group>"; };
 		91879F2727FBA17C006C9476 /* SquadHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadHeaderView.xib; sourceTree = "<group>"; };
+		91879F2A27FC6956006C9476 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +122,7 @@
 				91879F1327FB8141006C9476 /* Utils */,
 				91879EDF27FB80F2006C9476 /* AppDelegate.swift */,
 				91879EE127FB80F2006C9476 /* SceneDelegate.swift */,
+				91879F2A27FC6956006C9476 /* MainViewController.swift */,
 				91879EE327FB80F2006C9476 /* SquadViewController.swift */,
 				91879EE527FB80F2006C9476 /* Main.storyboard */,
 				91879EE827FB80F3006C9476 /* Assets.xcassets */,
@@ -169,7 +170,6 @@
 		91879F1E27FBA151006C9476 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				91879F1F27FBA151006C9476 /* TopSquadTableViewCell.swift */,
 				91879F2027FBA151006C9476 /* ButtonsSquadTableViewCell.swift */,
 				91879F2127FBA151006C9476 /* PlayerSquadTableViewCell.swift */,
 				91879F2527FBA16D006C9476 /* SquadHeaderView.swift */,
@@ -313,10 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				91879F1B27FB896A006C9476 /* Squad.swift in Sources */,
+				91879F2B27FC6956006C9476 /* MainViewController.swift in Sources */,
 				91879EE427FB80F2006C9476 /* SquadViewController.swift in Sources */,
 				91879EE027FB80F2006C9476 /* AppDelegate.swift in Sources */,
 				91879EE227FB80F2006C9476 /* SceneDelegate.swift in Sources */,
-				91879F2227FBA151006C9476 /* TopSquadTableViewCell.swift in Sources */,
 				91879F2927FC5EAA006C9476 /* RoundedCornersImageView.swift in Sources */,
 				91879F2627FBA16D006C9476 /* SquadHeaderView.swift in Sources */,
 				91879F2327FBA151006C9476 /* ButtonsSquadTableViewCell.swift in Sources */,
