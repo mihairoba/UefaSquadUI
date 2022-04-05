@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,38 +29,107 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GoG-gs-6tL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopSquadCellIdentifier" rowHeight="286" id="Hv4-U2-UJa" customClass="TopSquadTableViewCell">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="286"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopSquadCellIdentifier" rowHeight="260" id="Hv4-U2-UJa" customClass="TopSquadTableViewCell" customModule="UefaSquadUI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hv4-U2-UJa" id="FPy-z4-lGq">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_barcelona_1" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-Rm-wiF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ej-bP-x3D">
-                                                    <rect key="frame" x="288" y="160" width="110" height="110"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round of " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-e8-ean">
+                                                    <rect key="frame" x="16" y="216.5" width="75" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fc_barcleona" translatesAutoresizingMaskIntoConstraints="NO" id="9ej-bP-x3D">
+                                                    <rect key="frame" x="288" y="134" width="110" height="110"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" id="LWY-vX-wVh"/>
                                                         <constraint firstAttribute="height" constant="110" id="nLH-xK-Sjb"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f2-dS-B5d">
+                                                    <rect key="frame" x="18" y="30" width="30" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="70Q-pk-8ho"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="LCa-jI-KIE"/>
+                                                        <constraint firstAttribute="height" constant="20" id="xXu-HX-Ofn"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="backButton"/>
+                                                    <connections>
+                                                        <action selector="backButtonPressed:" destination="Hv4-U2-UJa" eventType="touchUpInside" id="C8Y-sY-bkc"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcelona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-ty-buM">
+                                                    <rect key="frame" x="16" y="74" width="199" height="52.5"/>
+                                                    <fontDescription key="fontDescription" name="Champions-Bold" family="Champions" pointSize="48"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFa-aI-vdD">
+                                                    <rect key="frame" x="16" y="198.5" width="53" height="17"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U75-5t-HdP">
+                                                    <rect key="frame" x="373" y="27.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="0Vj-AJ-xgl"/>
+                                                        <constraint firstAttribute="width" constant="25" id="hew-vM-HU7"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="favouriteNormal"/>
+                                                    <state key="selected" image="favouriteSelected"/>
+                                                    <connections>
+                                                        <action selector="favouriteButtonPressed:" destination="Hv4-U2-UJa" eventType="touchUpInside" id="5qO-1y-FHa"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="U75-5t-HdP" firstAttribute="centerY" secondItem="7f2-dS-B5d" secondAttribute="centerY" id="9uk-P0-6NK"/>
                                                 <constraint firstItem="xfL-Rm-wiF" firstAttribute="top" secondItem="FPy-z4-lGq" secondAttribute="top" id="CM9-BJ-T72"/>
                                                 <constraint firstItem="xfL-Rm-wiF" firstAttribute="leading" secondItem="FPy-z4-lGq" secondAttribute="leading" id="GNz-sL-4c5"/>
+                                                <constraint firstItem="OFa-aI-vdD" firstAttribute="top" secondItem="VMh-ty-buM" secondAttribute="bottom" constant="72" id="Igy-eN-uRt"/>
                                                 <constraint firstAttribute="bottom" secondItem="9ej-bP-x3D" secondAttribute="bottom" constant="16" id="JwV-40-Tdc"/>
                                                 <constraint firstAttribute="bottom" secondItem="xfL-Rm-wiF" secondAttribute="bottom" id="O9A-D2-m1c"/>
+                                                <constraint firstItem="Vgd-e8-ean" firstAttribute="leading" secondItem="FPy-z4-lGq" secondAttribute="leading" constant="16" id="Oea-Kg-Jf2"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vgd-e8-ean" secondAttribute="bottom" constant="24" id="TgE-Lu-aUQ"/>
+                                                <constraint firstItem="7f2-dS-B5d" firstAttribute="leading" secondItem="FPy-z4-lGq" secondAttribute="leading" constant="18" id="WDE-yV-KqX"/>
+                                                <constraint firstItem="U75-5t-HdP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7f2-dS-B5d" secondAttribute="trailing" id="XCS-GN-9Pn"/>
+                                                <constraint firstItem="OFa-aI-vdD" firstAttribute="leading" secondItem="FPy-z4-lGq" secondAttribute="leading" constant="16" id="XfP-GA-L7F"/>
+                                                <constraint firstItem="9ej-bP-x3D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vgd-e8-ean" secondAttribute="trailing" constant="8" symbolic="YES" id="asn-ye-bLe"/>
                                                 <constraint firstAttribute="trailing" secondItem="xfL-Rm-wiF" secondAttribute="trailing" id="f47-Zo-cHt"/>
+                                                <constraint firstItem="VMh-ty-buM" firstAttribute="leading" secondItem="FPy-z4-lGq" secondAttribute="leading" constant="16" id="fc9-ro-L5y"/>
+                                                <constraint firstItem="7f2-dS-B5d" firstAttribute="top" secondItem="FPy-z4-lGq" secondAttribute="top" constant="30" id="g1R-1g-dkg"/>
+                                                <constraint firstItem="9ej-bP-x3D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OFa-aI-vdD" secondAttribute="trailing" constant="8" symbolic="YES" id="hLn-K6-WFu"/>
+                                                <constraint firstItem="VMh-ty-buM" firstAttribute="top" secondItem="7f2-dS-B5d" secondAttribute="bottom" constant="24" id="iwV-pn-tvG"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VMh-ty-buM" secondAttribute="trailing" constant="16" id="njq-59-tVJ"/>
+                                                <constraint firstItem="Vgd-e8-ean" firstAttribute="top" secondItem="OFa-aI-vdD" secondAttribute="bottom" constant="1" id="u7l-tF-zOq"/>
+                                                <constraint firstAttribute="trailing" secondItem="U75-5t-HdP" secondAttribute="trailing" constant="16" id="x89-UL-tsM"/>
+                                                <constraint firstItem="9ej-bP-x3D" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VMh-ty-buM" secondAttribute="bottom" id="xcl-xU-MxW"/>
                                                 <constraint firstAttribute="trailing" secondItem="9ej-bP-x3D" secondAttribute="trailing" constant="16" id="yNS-Rq-tSx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backButton" destination="7f2-dS-B5d" id="SF9-Ly-6c7"/>
+                                            <outlet property="favouriteButton" destination="U75-5t-HdP" id="QwF-hy-siv"/>
+                                            <outlet property="roundNumber" destination="Vgd-e8-ean" id="Os6-0g-wod"/>
+                                            <outlet property="squadBadge" destination="9ej-bP-x3D" id="nX1-mM-T8y"/>
+                                            <outlet property="squadName" destination="VMh-ty-buM" id="2KL-eN-oR8"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonsSquadCellIdentifier" id="Tp4-Hu-HdD" customClass="ButtonsSquadTableViewCell">
-                                        <rect key="frame" x="0.0" y="330.5" width="414" height="44.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonsSquadCellIdentifier" id="Tp4-Hu-HdD" customClass="ButtonsSquadTableViewCell" customModule="UefaSquadUI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="304.5" width="414" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tp4-Hu-HdD" id="g3P-Id-jBz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
@@ -85,9 +153,6 @@
                                                             <state key="selected">
                                                                 <color key="titleColor" red="0.35294117650000001" green="0.96862745100000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l9r-zu-sLk"/>
-                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ab-ZW-GxO">
                                                             <rect key="frame" x="82" y="0.0" width="59" height="44.5"/>
@@ -104,9 +169,6 @@
                                                             <state key="selected">
                                                                 <color key="titleColor" red="0.35294117650000001" green="0.96862745100000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fog-vh-Asf"/>
-                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uQ-lD-fJq">
                                                             <rect key="frame" x="151" y="0.0" width="50" height="44.5"/>
@@ -123,9 +185,6 @@
                                                             <state key="selected">
                                                                 <color key="titleColor" red="0.35294117650000001" green="0.96862745100000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTc-Ww-wEe"/>
-                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kk-Jh-AZd">
                                                             <rect key="frame" x="211" y="0.0" width="36" height="44.5"/>
@@ -142,9 +201,6 @@
                                                             <state key="selected">
                                                                 <color key="titleColor" red="0.35294117650000001" green="0.96862745100000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kBB-UH-lWl"/>
-                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="5" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISG-XU-vmm">
                                                             <rect key="frame" x="257" y="0.0" width="44" height="44.5"/>
@@ -160,9 +216,6 @@
                                                                 <color key="titleColor" red="0.3529411764705882" green="0.96862745098039216" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lJ1-GR-efE"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -196,8 +249,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerSquadCellIdentifier" rowHeight="60" id="1DR-8R-UrL" customClass="PlayerSquadTableViewCell">
-                                        <rect key="frame" x="0.0" y="375" width="414" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerSquadCellIdentifier" rowHeight="60" id="1DR-8R-UrL" customClass="PlayerSquadTableViewCell" customModule="UefaSquadUI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="349" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1DR-8R-UrL" id="ltZ-B6-DgF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -264,6 +317,12 @@
                                                 <constraint firstItem="sHi-mi-O0m" firstAttribute="leading" secondItem="ltZ-B6-DgF" secondAttribute="leading" constant="15.5" id="mQw-UI-bMm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerAvatar" destination="sHi-mi-O0m" id="Vl1-Z5-meJ"/>
+                                            <outlet property="playerCountry" destination="ovs-Uw-O0M" id="Tjn-eU-fYs"/>
+                                            <outlet property="playerName" destination="URg-Gk-fss" id="Yqv-Qz-3fc"/>
+                                            <outlet property="playerNumber" destination="DRt-PF-60j" id="sd3-Mh-d5k"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -273,7 +332,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GoG-gs-6tL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9zG-d4-ifY"/>
                             <constraint firstItem="GoG-gs-6tL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EKJ-gv-dar"/>
@@ -282,11 +341,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="groupsButton" destination="6uQ-lD-fJq" id="wnB-aA-6xv"/>
-                        <outlet property="matchesButton" destination="4Ab-ZW-GxO" id="959-6E-tAZ"/>
-                        <outlet property="overviewButton" destination="bOd-FM-oNF" id="Scz-Ib-L1a"/>
-                        <outlet property="squadButton" destination="ISG-XU-vmm" id="uBY-vg-jED"/>
-                        <outlet property="statsButton" destination="4kk-Jh-AZd" id="YwG-jU-3OE"/>
                         <outlet property="tableView" destination="GoG-gs-6tL" id="Dad-JA-405"/>
                     </connections>
                 </viewController>
@@ -295,11 +349,17 @@
             <point key="canvasLocation" x="139" y="139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="sHi-mi-O0m">
+            <size key="intrinsicContentSize" width="41" height="41"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Messi" width="41" height="41"/>
+        <image name="backButton" width="12" height="20"/>
         <image name="bg_barcelona_1" width="375" height="286"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="favouriteNormal" width="18" height="22"/>
+        <image name="favouriteSelected" width="18" height="22"/>
+        <image name="fc_barcleona" width="110" height="110"/>
     </resources>
 </document>

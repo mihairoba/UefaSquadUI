@@ -16,10 +16,15 @@
 		91879EF727FB80F4006C9476 /* UefaSquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879EF627FB80F4006C9476 /* UefaSquadUITests.swift */; };
 		91879F0127FB80F4006C9476 /* UefaSquadUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F0027FB80F4006C9476 /* UefaSquadUIUITests.swift */; };
 		91879F0327FB80F4006C9476 /* UefaSquadUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F0227FB80F4006C9476 /* UefaSquadUIUITestsLaunchTests.swift */; };
-		91879F1227FB8135006C9476 /* TableViewCells in Resources */ = {isa = PBXBuildFile; fileRef = 91879F1127FB8135006C9476 /* TableViewCells */; };
 		91879F1827FB8918006C9476 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 91879F1727FB8918006C9476 /* Fonts */; };
 		91879F1B27FB896A006C9476 /* Squad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1A27FB896A006C9476 /* Squad.swift */; };
 		91879F1D27FB9E53006C9476 /* UtilsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1C27FB9E53006C9476 /* UtilsManager.swift */; };
+		91879F2227FBA151006C9476 /* TopSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1F27FBA151006C9476 /* TopSquadTableViewCell.swift */; };
+		91879F2327FBA151006C9476 /* ButtonsSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F2027FBA151006C9476 /* ButtonsSquadTableViewCell.swift */; };
+		91879F2427FBA151006C9476 /* PlayerSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F2127FBA151006C9476 /* PlayerSquadTableViewCell.swift */; };
+		91879F2627FBA16D006C9476 /* SquadHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F2527FBA16D006C9476 /* SquadHeaderView.swift */; };
+		91879F2827FBA17C006C9476 /* SquadHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91879F2727FBA17C006C9476 /* SquadHeaderView.xib */; };
+		91879F2927FC5EAA006C9476 /* RoundedCornersImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91879F1427FB8141006C9476 /* RoundedCornersImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,11 +58,15 @@
 		91879EFC27FB80F4006C9476 /* UefaSquadUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UefaSquadUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91879F0027FB80F4006C9476 /* UefaSquadUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UefaSquadUIUITests.swift; sourceTree = "<group>"; };
 		91879F0227FB80F4006C9476 /* UefaSquadUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UefaSquadUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		91879F1127FB8135006C9476 /* TableViewCells */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TableViewCells; sourceTree = "<group>"; };
 		91879F1427FB8141006C9476 /* RoundedCornersImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageView.swift; sourceTree = "<group>"; };
 		91879F1727FB8918006C9476 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		91879F1A27FB896A006C9476 /* Squad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squad.swift; sourceTree = "<group>"; };
 		91879F1C27FB9E53006C9476 /* UtilsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsManager.swift; sourceTree = "<group>"; };
+		91879F1F27FBA151006C9476 /* TopSquadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSquadTableViewCell.swift; sourceTree = "<group>"; };
+		91879F2027FBA151006C9476 /* ButtonsSquadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsSquadTableViewCell.swift; sourceTree = "<group>"; };
+		91879F2127FBA151006C9476 /* PlayerSquadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSquadTableViewCell.swift; sourceTree = "<group>"; };
+		91879F2527FBA16D006C9476 /* SquadHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadHeaderView.swift; sourceTree = "<group>"; };
+		91879F2727FBA17C006C9476 /* SquadHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +119,6 @@
 			children = (
 				91879F1927FB8959006C9476 /* Model */,
 				91879F1727FB8918006C9476 /* Fonts */,
-				91879F1127FB8135006C9476 /* TableViewCells */,
 				91879F1327FB8141006C9476 /* Utils */,
 				91879EDF27FB80F2006C9476 /* AppDelegate.swift */,
 				91879EE127FB80F2006C9476 /* SceneDelegate.swift */,
@@ -152,10 +160,24 @@
 		91879F1927FB8959006C9476 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				91879F1E27FBA151006C9476 /* TableViewCells */,
 				91879F1A27FB896A006C9476 /* Squad.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
+		};
+		91879F1E27FBA151006C9476 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				91879F1F27FBA151006C9476 /* TopSquadTableViewCell.swift */,
+				91879F2027FBA151006C9476 /* ButtonsSquadTableViewCell.swift */,
+				91879F2127FBA151006C9476 /* PlayerSquadTableViewCell.swift */,
+				91879F2527FBA16D006C9476 /* SquadHeaderView.swift */,
+				91879F2727FBA17C006C9476 /* SquadHeaderView.xib */,
+			);
+			name = TableViewCells;
+			path = UefaSquadUI/TableViewCells;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -262,8 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91879F1827FB8918006C9476 /* Fonts in Resources */,
+				91879F2827FBA17C006C9476 /* SquadHeaderView.xib in Resources */,
 				91879EEC27FB80F3006C9476 /* LaunchScreen.storyboard in Resources */,
-				91879F1227FB8135006C9476 /* TableViewCells in Resources */,
 				91879EE927FB80F3006C9476 /* Assets.xcassets in Resources */,
 				91879EE727FB80F2006C9476 /* Main.storyboard in Resources */,
 			);
@@ -294,7 +316,12 @@
 				91879EE427FB80F2006C9476 /* SquadViewController.swift in Sources */,
 				91879EE027FB80F2006C9476 /* AppDelegate.swift in Sources */,
 				91879EE227FB80F2006C9476 /* SceneDelegate.swift in Sources */,
+				91879F2227FBA151006C9476 /* TopSquadTableViewCell.swift in Sources */,
+				91879F2927FC5EAA006C9476 /* RoundedCornersImageView.swift in Sources */,
+				91879F2627FBA16D006C9476 /* SquadHeaderView.swift in Sources */,
+				91879F2327FBA151006C9476 /* ButtonsSquadTableViewCell.swift in Sources */,
 				91879F1D27FB9E53006C9476 /* UtilsManager.swift in Sources */,
+				91879F2427FBA151006C9476 /* PlayerSquadTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
